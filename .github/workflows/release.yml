@@ -1,0 +1,31 @@
+name: Release PETRobots D81
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cc65 cc1541
+
+      - name: Build PETRobots.d81
+        run: |
+          make
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            PETRobots.prg
+            PETRobots.d81
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
