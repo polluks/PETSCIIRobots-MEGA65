@@ -1,0 +1,11 @@
+*.o
+*.prg
+*.d81
+*.map
+*.list
+build/
+bin/
+data/
+assets/
+Sounds/
+Music/
