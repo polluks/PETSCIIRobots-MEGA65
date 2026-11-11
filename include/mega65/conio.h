@@ -1,6 +1,6 @@
 /**
  * @file conio.h
- * @author Hernán Di Pietro
+ * @author Hern??n Di Pietro
  * @brief Console I/O support
  * @todo Convert `\m65lib*` to Doxygen tags. How/where is this used? The
  * reference guide? Doxygen can also output XML which is easy to parse.

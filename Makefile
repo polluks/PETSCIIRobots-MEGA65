@@ -50,3 +50,9 @@ clean:
 	rm -f $(OBJS) $(PRG) $(D81)
 
 .PHONY: all clean
+
+release: $(PRG)
+	mkdir -p release
+	$(CC1541) -n "petrobots" -i 65 release/PETRobots.d81
+	$(CC1541) -f petrobots -w $(PRG) release/PETRobots.d81
+	@echo "Created release/PETRobots.d81"
